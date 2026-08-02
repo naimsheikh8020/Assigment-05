@@ -1,4 +1,5 @@
 import { Search } from "lucide-react";
+import Link from "next/link";
 
 const gears = Array.from({ length: 8 });
 
@@ -126,8 +127,9 @@ export default function GearPage() {
             <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
 
               {gears.map((_, index) => (
-                <div
+                <Link
                   key={index}
+                  href={`/gear/${index + 1}`}
                   className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-indigo-500/40"
                 >
                   <div className="h-52 bg-gradient-to-br from-slate-700 to-slate-900" />
@@ -174,7 +176,7 @@ export default function GearPage() {
                     </div>
 
                   </div>
-                </div>
+                </Link>
               ))}
 
             </div>
