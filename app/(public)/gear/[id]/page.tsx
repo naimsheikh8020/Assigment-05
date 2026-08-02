@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
 import { Star } from "lucide-react";
+import { useState } from "react";
+import RentModal from "../../_components/RentModal";
 
 const reviews = [
   {
@@ -17,6 +20,18 @@ const reviews = [
 ];
 
 export default function GearDetailsPage() {
+  const [open, setOpen] = useState(false);
+  const handleRent = (payload: {
+    startDate: string;
+    endDate: string;
+    items: {
+      gearItemId: string;
+      quantity: number;
+    }[];
+  }) => {
+    console.log("Rental Payload:", payload);
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 py-10 text-white">
       <div className="mx-auto max-w-7xl px-4">
@@ -107,7 +122,10 @@ export default function GearDetailsPage() {
                 </h2>
               </div>
 
-              <button className="rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 px-8 py-4 font-semibold transition hover:scale-105">
+              <button
+                onClick={() => setOpen(true)}
+                className="rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 px-8 py-4"
+              >
                 Rent Now
               </button>
             </div>
@@ -203,6 +221,15 @@ export default function GearDetailsPage() {
           </div>
         </section>
       </div>
+      <RentModal
+        open={open}
+        onClose={() => setOpen(false)}
+        gearItemId="e29816fd-adcc-4ca9-8253-3862c93fad49"
+        gearName="Adidas Running Shoe"
+        pricePerDay={200}
+        availableStock={1}
+        onSubmit={handleRent}
+      />
     </main>
   );
 }
