@@ -9,9 +9,9 @@ import {
 
 const cards = [
   {
-    title: "Manage Gear",
-    description: "View, update and manage all gear.",
-    href: "/admin/gear",
+    title: "Manage Categories",
+    description: "View, update and manage all categories.",
+    href: "/admin/category",
     icon: Boxes,
     color: "from-indigo-600 to-cyan-500",
   },
@@ -40,7 +40,7 @@ const cards = [
 
 export default function AdminDashboard() {
   return (
-    <main className="space-y-10 max-w-7xl mx-auto">
+    <main className="space-y-10 mt-15 max-w-7xl mx-auto">
 
       <div>
         <h1 className="text-4xl font-bold text-white">
