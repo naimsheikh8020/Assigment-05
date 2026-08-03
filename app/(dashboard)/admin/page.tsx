@@ -40,7 +40,7 @@ const cards = [
 
 export default function AdminDashboard() {
   return (
-    <main className="space-y-10">
+    <main className="space-y-10 max-w-7xl mx-auto">
 
       <div>
         <h1 className="text-4xl font-bold text-white">

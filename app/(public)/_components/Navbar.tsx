@@ -25,6 +25,10 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname();
 
+  if (pathname.startsWith("/admin") || pathname.startsWith("/provider")) {
+    return null;
+  }
+
   const [open, setOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
@@ -101,8 +105,8 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={`relative text-sm font-medium transition ${active
-                    ? "text-white"
-                    : "text-slate-400 hover:text-white"
+                  ? "text-white"
+                  : "text-slate-400 hover:text-white"
                   }`}
               >
                 {item.name}
@@ -160,8 +164,8 @@ export default function Navbar() {
 
       <div
         className={`overflow-hidden transition-all duration-300 md:hidden ${open
-            ? "max-h-60 border-t border-white/10"
-            : "max-h-0"
+          ? "max-h-60 border-t border-white/10"
+          : "max-h-0"
           }`}
       >
         <nav className="flex flex-col p-4">
@@ -171,8 +175,8 @@ export default function Navbar() {
               href={item.href}
               onClick={() => setOpen(false)}
               className={`rounded-xl px-4 py-3 transition ${pathname === item.href
-                  ? "bg-indigo-500/20 text-white"
-                  : "text-slate-400 hover:bg-white/5 hover:text-white"
+                ? "bg-indigo-500/20 text-white"
+                : "text-slate-400 hover:bg-white/5 hover:text-white"
                 }`}
             >
               {item.name}
