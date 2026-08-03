@@ -30,9 +30,9 @@ const cards = [
     color: "from-orange-500 to-red-500",
   },
   {
-    title: "Reports",
-    description: "System reports and analytics.",
-    href: "/admin/reports",
+    title: "Get Gear",
+    description: "View, All the Gear.",
+    href: "/admin/product",
     icon: FolderTree,
     color: "from-purple-600 to-pink-500",
   },
